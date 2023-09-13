@@ -53,3 +53,25 @@ describe("test size: ", ()=> {
         expect(queue.size()).toBe(11)
     })
 })
+
+// Additional test cases
+test("test clear: ensures that clear method makes list empty", () => {
+    const queue = createQueue()
+    queue.enqueue(2)
+    queue.clear()
+    expect(queue).toEqual(queue)
+})
+
+test("test ensureCapacity", () => {
+    const queue = createQueue()
+    queue.enqueue(1)
+    queue.dequeue()
+    for (let i = 0; i < 15; i++) {
+        queue.enqueue(1)
+    } 
+})
+
+test("test dequeue", () => {
+    const queue = createQueue()
+    expect(queue.dequeue()).toBeNull()
+})
